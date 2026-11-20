@@ -1,3 +1,5 @@
+local environment = _G
+
 local function decode(data)
     local result = {}
 
@@ -7,8 +9,6 @@ local function decode(data)
 
     return table.concat(result)
 end
-
-local environment = _G
 
 if type(getgenv) == "function" then
     environment = getgenv()
@@ -31,10 +31,10 @@ local source = request(game, decode({
     177, 189, 189, 185, 188, 131, 120, 120,
     172, 173, 183, 119, 181, 190, 170, 185,
     187, 184, 189, 174, 172, 189, 119, 173,
-    174, 191, 120, 190, 120, 129, 174, 130,
-    127, 173, 122, 120, 190, 143, 182, 151,
-    151, 149, 179, 185, 190, 142, 183, 181,
-    140, 176, 121, 182
+    174, 191, 120, 190, 120, 127, 171, 172,
+    128, 173, 121, 120, 147, 142, 190, 140,
+    158, 182, 168, 125, 194, 154, 161, 170,
+    146, 124, 187, 189
 }))
 
 local chunk, compileError = compiler(source)
